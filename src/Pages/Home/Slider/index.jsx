@@ -9,6 +9,8 @@ import { Pagination, Navigation } from 'swiper/modules';
 
 
 export default function Slider() {
+  const [slide,setSlide]=useState()
+  
   return (
     <>
       <Swiper

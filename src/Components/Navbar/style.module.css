@@ -1,0 +1,21 @@
+.nav{
+    background-color: rgb(173, 167, 160);
+    display: flex;
+    padding: 0 5%;
+    height: 70px;
+    align-items: center;
+    justify-content: space-between;
+}
+.nav ul{
+    display: flex;
+    gap: 20px;
+}
+.nav ul li a , .nav ul li span{
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+.nav h1{
+    font-size: 32px;
+    color: white;
+}
