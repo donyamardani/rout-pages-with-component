@@ -11,10 +11,18 @@ import Footer from './Components/Footer'
 import ProductDetails from './Pages/ProductDetails'
 
 export default function App() {
-  const [token,setToken]=useState(null);
-  const handleToken=(tk)=>{
-    setToken(tk)
-  }
+  
+  const [token, setToken] = useState(localStorage.getItem("token"));
+
+  const handleToken = (newToken) => {
+    if (newToken) {
+      localStorage.setItem("token", newToken);
+      setToken(newToken);
+    } else {
+      localStorage.removeItem("token");
+      setToken(null);
+    }
+    };
   return (
     <>
     <AuthContext.Provider value={{handleToken,token}}>

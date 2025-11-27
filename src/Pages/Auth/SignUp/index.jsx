@@ -11,16 +11,30 @@ export default function SignUp({handlePageType}) {
   const handleSubmit = async(e) => {
     e.preventDefault();
     try {
-        const res=await fetch('https://fakestoreapi.com/auth/login',{
+        const res=await fetch('https://fakestoreapi.com/users',{
           method:'POST',
           headers:{
             'Content-type':'application/json'
           },
           body:JSON.stringify(fields)
         })
+        console.log(hiiiii)
         const data=await res.json()
-        notify('success','login successfully')
-        handleToken(data.token)
+        
+      // 2. Login automatically
+      const loginRes = await fetch("https://fakestoreapi.com/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: fields.username,
+          password: fields.password,
+        }),
+      });
+
+      const loginData = await loginRes.json();
+      handleToken(loginData.token);
+
+      notify("success", "Account created & logged in");
     } catch (error) {
       notify('error','login failed')
     }
