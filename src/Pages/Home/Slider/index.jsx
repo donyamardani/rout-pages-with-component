@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useState,useEffect } from 'react';
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from 'swiper/react';
 
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
-import "./style.css";
+import './style.css';
 
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
 
 export default function Slider() {
-    const [slide,setSlide]=useState();
+    const [slide,setSlide]=useState([]);
   useEffect(() => {
     (async () => {
         const url =
@@ -32,8 +32,8 @@ export default function Slider() {
           const data = await res.json(); 
           let images=[]; 
            data.data?.map(
-                    e=>{images.push(e.attributes?.["image-urls"][0])
-                        images.push(e.attributes?.["image-urls"][1])
+                    e=>{images.push(e?.attributes?.["image-urls"][0])
+                        images.push(e?.attributes?.["image-urls"][1])
                    });
         setSlide(images);
         } catch (error) {

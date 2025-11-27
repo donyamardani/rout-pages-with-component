@@ -15,7 +15,7 @@ export default function Navbar() {
         <li><Link to={"/Products"}>Products</Link></li>
         {token ? <li> <span onClick={()=>{handleToken(null)
           Navigate('/')
-        }}>LogOUT</span></li>:<li><Link to={'/Auth'}>SignIn/SignUp</Link></li>}
+        }}>LogOut</span></li>:<li><Link to={'/Auth'}>SignIn/SignUp</Link></li>}
       </ul>
     </nav>
     </>
