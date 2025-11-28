@@ -13,7 +13,7 @@ export default function ProductCard({img,des,name,price}) {
            <h2>{name}</h2>
            <p>{des}</p>
            <span>price: ${price/100}
-           <Link to={`/product-detail/${id}/${name.replaceAll(" ","-")}`}/>
+           <Link to={`/ProductDetails/${id}/${name.replaceAll(" ","-")}`}/>
            moreInformation
            </span>
         </div>

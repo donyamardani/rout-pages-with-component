@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import style from './style.module.css';
 import { HashLoader } from 'react-spinners';
 import { useState } from 'react';
-import ProductCard from './ProductCard';
+import ProductCard from './ProductCard'
 
 export default function Products() {
 const [products,setProducts]=useState()
