@@ -5,7 +5,7 @@ import { useState } from 'react';
 import ProductCard from './ProductCard'
 
 export default function Products() {
-const [products,setProducts]=useState()
+const [products,setProducts]=useState([])
 useEffect(()=>{
   (async()=>{
     try {
@@ -13,7 +13,7 @@ useEffect(()=>{
 	method: 'GET',
 	headers: {
 		'x-rapidapi-key': '6f917a3e55msh657525484a17534p15a129jsnc8c4f43ebe39',
-		'x-rapidapi-host': 'sephora.p.rapidapi.com'}
+		'x-rapidapi-host': 'sephora.p.rapidapi.com'},
   })
       const data=await res.json()
       setProducts(data.data)
@@ -22,18 +22,15 @@ useEffect(()=>{
     }
   })()
 },[]);
-const items=products.map((e,index)=><ProductCard key={index} id={e?.id} des={e?.attributes?.description} img={e?.attributes["image-url"][0]} name={e?.attribute?.name} price={e?.attribute?.price}/>)
+const items=products?.map((e,index)=><ProductCard key={index} id={e?.id} des={e?.attributes?.description} img={e?.attributes["image-urls"][0]} name={e?.attributes?.name} price={e?.attributes?.price}/>);
   return (
     <>
-    <div className={style.container}>
-      {products
-      ?<div className={style.container}>
+      {products?(<div className={style.container}>
         {items}
-        </div>
-      :<div className={style.loding}>
+        </div>):(<div className={style.loading}>
         <HashLoader size={150} color="white"/>
-        </div>}
-    </div>
+        </div>)
+}
     </>
   )
 }

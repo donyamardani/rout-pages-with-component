@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-direction: wrap;
+    flex-wrap: wrap;
 }
 .loading{
     position: fixed;
@@ -15,4 +15,5 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 }
