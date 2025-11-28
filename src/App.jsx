@@ -31,7 +31,7 @@ export default function App() {
       <Routes>
         <Route exact path='/' element={<Home/>}/>
         <Route path='/Products' element={<Products/>}/>
-        <Route path='/ProductsDetails/:id' element={<ProductDetails/>}/>
+        <Route path='/ProductsDetails/:id/:name' element={<ProductDetails/>}/>
         <Route path='/Auth' element={token? <Navigate to={'/'}/>: <Auth/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
