@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import style from './style.module.css';
-import { HashLoader } from 'react-spinners';
 import { useState } from 'react';
 import ProductCard from './ProductCard'
+import Loading from '../../Components/Loading';
 
 export default function Products() {
 const [products,setProducts]=useState([])
@@ -25,12 +25,7 @@ useEffect(()=>{
 const items=products?.map((e,index)=><ProductCard key={index} id={e?.id} des={e?.attributes?.description} img={e?.attributes["image-urls"][0]} name={e?.attributes?.name} price={e?.attributes?.price}/>);
   return (
     <>
-      {products?(<div className={style.container}>
-        {items}
-        </div>):(<div className={style.loading}>
-        <HashLoader size={150} color="white"/>
-        </div>)
-}
+      {products?<div className={style.container}>{items}</div>:<Loading/>}
     </>
   )
 }

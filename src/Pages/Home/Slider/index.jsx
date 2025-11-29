@@ -11,6 +11,7 @@ import './style.css';
 
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
+import Loading from '../../../Components/Loading';
 
 export default function Slider() {
     const [slide,setSlide]=useState([]);
@@ -44,7 +45,7 @@ export default function Slider() {
   const items=slide?.map((e,index)=><SwiperSlide key={index}><img src={e} alt="" /></SwiperSlide>)
   return (
     <>
-      <Swiper
+     {slide?<Swiper
         slidesPerView={1}
         spaceBetween={30}
         loop={true}
@@ -56,7 +57,7 @@ export default function Slider() {
         className={"mySwiper"}
       >
        {items}
-      </Swiper>
+      </Swiper>:<Loading/>} 
     </>
   );
 }
