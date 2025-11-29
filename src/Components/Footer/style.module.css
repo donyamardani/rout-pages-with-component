@@ -1,0 +1,41 @@
+.Footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 2%;
+     min-height: 200px;
+     width: 100%;
+}
+.text {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   width: 40%;
+   color:rgb(218, 216, 216) ;
+   padding:20px;
+}
+.text ul li{
+    margin-top: 15px;
+    padding: 5px;
+}
+.text a{
+    color: rgb(218, 216, 216);
+   text-decoration: none;
+   font-size: 24px;
+}
+.text a:hover{
+    color: steelblue;
+}
+.media{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+.media ul li {
+    color:rgb(218, 216, 216) ;
+}
+.media ul li a:hover{
+color: steelblue;
+}
