@@ -1,12 +1,12 @@
-import React,{useContext,useState} from 'react';
-import AuthContext from '../../../Utils/AuthContext';
+import React,{useState} from 'react';
+
 import notify from '../../../Utils/notify';
 import useFormFields from '../../../Utils/UseFormFields';
 import './style.css'
 
 export default function SignUp({handlePageType}) {
   const [fields,handleChange]=useFormFields(null);
-  const {handleToken}=useContext(AuthContext);
+ 
 
   const handleSubmit = async(e) => {
     e.preventDefault();

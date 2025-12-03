@@ -1,12 +1,12 @@
 import React, { useContext } from 'react'
 import useFormFields from '../../../Utils/UseFormFields';
-import AuthContext from '../../../Utils/AuthContext';
+
 import notify from '../../../Utils/notify';
 import './style.css'
 
 export default function SignIn({handlePageType}) {
   const [fields,handleChange]=useFormFields();
-  const {handleToken}=useContext(AuthContext);
+ 
 
   const handleSubmit=async(e)=>{
     e.preventDefault();

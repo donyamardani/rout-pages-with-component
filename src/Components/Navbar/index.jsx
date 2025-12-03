@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import style from "./style.module.css";
-import AuthContext from '../../Utils/AuthContext';
+
 
 export default function Navbar() {
   const navigate = useNavigate();
-  const {token,handleToken}=useContext(AuthContext)
+ 
   return (
     <>
     <nav className={style.nav}>
