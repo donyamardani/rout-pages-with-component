@@ -2,10 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import style from './style.module.css'
 import Loading from '../../Components/Loading';
+import { useSelector,useDispatch } from 'react-redux';
+import {add,remove} from '../../Store/Slices/CartSlice'
+
 
 export default function ProductDetails() {
   const {id}=useParams();
   const [product,setProduct]=useState();
+  const dispatch=useDispatch();
+  const quantity=useSelector(state=>state.cart?.items)?.filter(e=>e.id==id)[0].quantity
    
   useEffect(
   ()=>{
@@ -34,6 +39,11 @@ export default function ProductDetails() {
           <p dangerouslySetInnerHTML={{__html:product?.attributes?.description}}></p>
           <div dangerouslySetInnerHTML={{__html:product?.attributes['how-to-text']}}></div>
          <p dangerouslySetInnerHTML={{__html:product.attributes['display-price']}}></p>
+         <div>
+          <button className={style.btnDanger} onClick={()=>dispatch(remove(id))}>-</button>
+          {}
+          <button className={style.btnSuccess} onClick={()=>dispatch(add(product))}>+</button>
+         </div>
        </div>
     </div>:<Loading/>}
     </>

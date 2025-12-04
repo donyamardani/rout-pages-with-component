@@ -10,6 +10,7 @@ import Footer from './Components/Footer'
 import ProductDetails from './Pages/ProductDetails'
 import { useDispatch, useSelector } from 'react-redux'
 import { login,logout } from './Store/Slices/AuthSlice'
+import Cart from './Pages/Auth/Cart'
 
 export default function App() {
   const {token}=useSelector(state=>state.auth)
@@ -24,6 +25,7 @@ export default function App() {
         <Route path='/Products' element={<Products/>}/>
         <Route path='/ProductDetails/:id/:name' element={<ProductDetails/>}/>
         <Route path='/Auth' element={token? <Navigate to={'/'}/>: <Auth/>}/>
+        <Route path='/Cart' element={<Cart/>}/>
         <Route path='*' element={<NotFound/>}/>
       </Routes>
 </main>      
