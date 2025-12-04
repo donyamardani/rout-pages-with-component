@@ -1,12 +1,12 @@
 import React,{useState} from 'react';
-
+import { useSelector,useDispatch } from 'react-redux';
 import notify from '../../../Utils/notify';
 import useFormFields from '../../../Utils/UseFormFields';
 import './style.css'
 
 export default function SignUp({handlePageType}) {
   const [fields,handleChange]=useFormFields(null);
- 
+  const dispatch=useDispatch()
 
   const handleSubmit = async(e) => {
     e.preventDefault();
@@ -18,7 +18,7 @@ export default function SignUp({handlePageType}) {
           },
           body:JSON.stringify(fields)
         })
-        console.log(hiiiii)
+       
         const data=await res.json()
         
       // 2. Login automatically
@@ -32,7 +32,7 @@ export default function SignUp({handlePageType}) {
       });
 
       const loginData = await loginRes.json();
-      handleToken(loginData.token);
+      dispatch(login(loginData.token));
 
       notify("success", "Account created & logged in");
     } catch (error) {

@@ -1,13 +1,14 @@
 import React, { useContext } from 'react'
 import useFormFields from '../../../Utils/UseFormFields';
-
+import { useDispatch,useSelector } from 'react-redux';
+import { login} from '../../../Store/Slices/AuthSlice';
 import notify from '../../../Utils/notify';
 import './style.css'
 
 export default function SignIn({handlePageType}) {
   const [fields,handleChange]=useFormFields();
- 
-
+  const dispatch=useDispatch()
+  const {token}=useSelector(state=>state.auth)
   const handleSubmit=async(e)=>{
     e.preventDefault();
     try {
@@ -18,7 +19,7 @@ export default function SignIn({handlePageType}) {
       })
       const data=await res.json()
       notify('success','login sucsessfule')
-      handleToken(data.token)
+      dispatch(login(data.token))
     } catch (error) {
       notify('error','login failed');
     }
