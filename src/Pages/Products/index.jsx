@@ -25,7 +25,7 @@ useEffect(()=>{
 const items=products?.map((e,index)=><ProductCard key={index} id={e?.id} des={e?.attributes?.description} img={e?.attributes["image-urls"][0]} name={e?.attributes?.name} price={e?.attributes?.price}/>);
   return (
     <>
-      {products?<div className={style.container}>{items}</div>:<Loading/>}
+      {products?(<div className={style.container}>{items}</div>):(<Loading/>)}
     </>
   )
 }

@@ -8,13 +8,12 @@ import NotFound from './Pages/NotFound'
 import Navbar from './Components/Navbar'
 import Footer from './Components/Footer'
 import ProductDetails from './Pages/ProductDetails'
-import { useDispatch, useSelector } from 'react-redux'
-import { login,logout } from './Store/Slices/AuthSlice'
-import Cart from './Pages/Auth/Cart'
+import { useSelector } from 'react-redux'
+import Cart from './Pages/Cart';
 
 export default function App() {
   const {token}=useSelector(state=>state.auth)
-  const dispatch=useDispatch()
+
   return (
     <>
     

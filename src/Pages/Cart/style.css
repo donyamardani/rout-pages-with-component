@@ -1,0 +1,104 @@
+/* General Table Styling */
+.table-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .table-heading {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  .styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .styled-table th, .styled-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .styled-table th {
+    background-color: #f4f4f4;
+    color: #333;
+    font-weight: bold;
+    font-size: 16px;
+  }
+  
+  .styled-table tbody tr {
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .styled-table tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .product-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  /* Action Buttons */
+  .action-btn {
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-btn {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .add-btn:hover {
+    background-color: #45a049;
+  }
+  
+  .remove-btn {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .remove-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Total Price */
+  .grand-total-label {
+    text-align: right;
+    font-weight: bold;
+    padding-right: 20px;
+  }
+  
+  .grand-total {
+    font-weight: bold;
+    color: #333;
+    font-size: 18px;
+  }
+  
+  /* Footer Styling */
+  tfoot td {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  h2{
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  

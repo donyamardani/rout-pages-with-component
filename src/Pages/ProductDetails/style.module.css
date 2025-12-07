@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     width: 95%;
-    height: 50vh;
+    height: 60vh;
     margin: 50px auto;
     border-radius: 20px;
     overflow: hidden;
@@ -28,4 +28,24 @@
 }
 .container p{
     text-align: justify;
+}
+
+.btnDanger{
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    background-color: red;
+    margin: 10px 20px;
+}
+.btnSuccess{
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    background-color: green;
+    margin: 10px 20px;
+
+}
+.buttonDiv{
+    display: flex;
+    align-items: center;
 }

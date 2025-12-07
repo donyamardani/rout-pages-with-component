@@ -12,11 +12,10 @@ export default function ProductCard({id,img,des,name,price}) {
         <div>
            <h2>{name.split(' ').slice(0,2).join(' ')}</h2>
            <p>{des.split(' ').slice(0,10).join(' ')}</p>
-           <span>price: ${price/100}
+           <span>price: ${price/100} </span>
            <Link to={`/ProductDetails/${id}/${name.replaceAll(" ","-")}`}>
            moreInformation
            </Link>
-           </span>
         </div>
      </div>
     </>

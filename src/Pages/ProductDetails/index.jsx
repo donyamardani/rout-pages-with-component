@@ -10,7 +10,7 @@ export default function ProductDetails() {
   const {id}=useParams();
   const [product,setProduct]=useState();
   const dispatch=useDispatch();
-  const quantity=useSelector(state=>state.cart?.items)?.filter(e=>e.id==id)[0].quantity
+  const quantity=useSelector(state=>state.cart?.items)?.filter(e=>e.id==id)[0]?.quantity
    
   useEffect(
   ()=>{
@@ -39,9 +39,9 @@ export default function ProductDetails() {
           <p dangerouslySetInnerHTML={{__html:product?.attributes?.description}}></p>
           <div dangerouslySetInnerHTML={{__html:product?.attributes['how-to-text']}}></div>
          <p dangerouslySetInnerHTML={{__html:product.attributes['display-price']}}></p>
-         <div>
+         <div className={style.buttonDiv}>
           <button className={style.btnDanger} onClick={()=>dispatch(remove(id))}>-</button>
-          {}
+          {quantity?<span>{quantity}</span>:''}
           <button className={style.btnSuccess} onClick={()=>dispatch(add(product))}>+</button>
          </div>
        </div>
